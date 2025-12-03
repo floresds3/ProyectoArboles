@@ -21,7 +21,6 @@ public class ProyectoArboles
         A_Lista lista = new A_Lista();
         A_Pila pila = new A_Pila();
         A_Cola cola =  new A_Cola();
-        
         Arbol arbol = new Arbol();
         
         do
@@ -59,7 +58,7 @@ public class ProyectoArboles
                 Cola(cola, sc);
                 break;
             case 4:
-                System.out.println("Arboles");
+                Arbol(arbol, sc);
                 break;
             case 5:
                 System.out.println("Saliendo...");
@@ -306,6 +305,76 @@ public class ProyectoArboles
                 break;
             default:
                 System.out.println("Opcion no valida. Por favor, seleccione una de las opciones del menu.");
+        }
+    }
+    static void Arbol(Arbol arbol, Scanner sc)
+    {
+        int op;
+        
+        do
+        {
+            System.out.println("    MENU PRINCIPAL    ");
+            System.out.println("");
+            System.out.println("1. Insertar nodo");
+            System.out.println("2. Imprimir tamaño");
+            System.out.println("3. Imprimir altura");
+            System.out.println("4. Imprimir LRP");
+            System.out.println("5. Imprimir recorrido");
+            System.out.println("6. Salir");
+            System.out.println("");
+            System.out.println("-----------------------");
+            System.out.println("");
+            System.out.print("Seleccione la opcion: ");
+            op = sc.nextInt();
+            
+            System.out.println("");
+            
+            OpcionesArbol(op, sc, arbol);
+             
+            sc.nextLine();
+            System.out.print("\nPRESIONE ENTER PARA CONTINUAR...");
+            sc.nextLine();
+            
+
+        }
+        while (op != 6);
+    }
+    
+    static void OpcionesArbol(int op, Scanner sc, Arbol arbol) 
+    {
+        switch (op) 
+        {
+            case 1:
+                System.out.print("Ingrese el valor a insertar: ");
+                int n = sc.nextInt();
+                
+                arbol.Insert(n);
+                break;
+                
+            case 2:
+                System.out.println("Imprimiendo tamano...");
+                
+                int tam = arbol.Tamano();
+                System.out.println("El Tamano del arbol es de " + tam);
+                break;
+                
+            case 3:
+                System.out.println("Imprimiendo Altura...");
+                
+                int alt = arbol.Altura();
+                System.out.println("La altura del arbol es de " + alt);
+                break;
+            case 4:
+                System.out.println("Imprimiento LRP...");
+                
+                double LRP = arbol.LRP();
+                System.out.println("El LRP del arbol es de " + LRP);
+                break;
+            case 5:
+                System.out.println("Imprimiendo recorrido...");
+                
+                arbol.Recorrido();
+                break;
         }
     }
 }

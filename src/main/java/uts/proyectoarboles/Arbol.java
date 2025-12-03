@@ -19,15 +19,19 @@ public class Arbol
         obs = null;
     }
     
-    public void Recorrido (nodo act)
+    public void Recorrido()
+    {
+        RecorridoRec(raiz);
+    }
+    public void RecorridoRec (nodo act)
     {
         if (act != null)
         {
             System.out.print(act.valor + ", ");
-            Recorrido(act.izq);
+            RecorridoRec(act.izq);
             
             System.out.print(act.valor + ", ");
-            Recorrido(act.der);
+            RecorridoRec(act.der);
             
             System.out.print(act.valor + ", ");
         }
@@ -97,18 +101,62 @@ public class Arbol
         } 
     }
     
-    public void Altura()
+    public int Altura()
     {
+        return AlturaRec(raiz);
+    }
+            
+    public int AlturaRec(nodo act)
+    {
+        if (act == null)
+            return 0;
         
+        int subizq = AlturaRec(act.izq);
+        int subder = AlturaRec(act.der);
+       
+        if(subizq > subder || subizq == subder)
+            return subizq + 1;
+        else
+            return subder + 1;
     }
     
-    public void Tamano()
+    public int Tamano()
     {
-        
+        return TamanoRec(raiz);
     }
     
-    public void LFP()
+    public int TamanoRec(nodo act)
+    {
+        if (act == null)
+            return 0;
+        
+        int subizq = TamanoRec(act.izq);
+        int subder = TamanoRec(act.der);
+        
+        return ( subizq + subder ) + 1;
+    }
+    
+    public double LRP()
+    {
+        int n =  0;
+        double promedio = LRPRec(raiz, n)/ TamanoRec(raiz);
+        
+        return promedio;
+    }
+    public double LRPRec(nodo act, int n)
     {
         
+        if (act != null)
+        {
+            
+            double subizq = LRPRec(act.izq, n+1);
+            double subder = LRPRec(act.der, n+1);
+            
+            double suma = (subizq + subder) + n + 1;
+            
+            return suma;
+            
+        }
+        return 0;
     }
 }
