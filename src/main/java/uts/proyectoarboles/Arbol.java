@@ -78,7 +78,7 @@ public class Arbol
         
         if (found)
         {
-            System.out.println("El nodo ya existe");
+            System.out.println("El nodo ya existe.");
             obs = psave;
         }
         else

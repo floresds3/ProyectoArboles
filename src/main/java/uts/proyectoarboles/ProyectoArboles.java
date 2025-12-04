@@ -25,7 +25,7 @@ public class ProyectoArboles
         
         do
         {
-            System.out.println("\nMenu Principal");
+            System.out.println("\nMENU PRINCIPAL");
             
             System.out.println("1. Lista");
             System.out.println("2. Pilas");
@@ -74,7 +74,7 @@ public class ProyectoArboles
         
         do
         {
-            System.out.println("MENU LISTA");
+            System.out.println("\nMENU LISTA");
             
             System.out.println("1. Insertar nodo");
             System.out.println("2. Encontrar nodo");
@@ -313,17 +313,15 @@ public class ProyectoArboles
         
         do
         {
-            System.out.println("    MENU PRINCIPAL    ");
+            System.out.println("\nMENU ARBOLES    ");
             System.out.println("");
             System.out.println("1. Insertar nodo");
-            System.out.println("2. Imprimir tamaño");
+            System.out.println("2. Imprimir tamano");
             System.out.println("3. Imprimir altura");
             System.out.println("4. Imprimir LRP");
             System.out.println("5. Imprimir recorrido");
             System.out.println("6. Salir");
-            System.out.println("");
-            System.out.println("-----------------------");
-            System.out.println("");
+            
             System.out.print("Seleccione la opcion: ");
             op = sc.nextInt();
             
@@ -355,20 +353,20 @@ public class ProyectoArboles
                 System.out.println("Imprimiendo tamano...");
                 
                 int tam = arbol.Tamano();
-                System.out.println("El Tamano del arbol es de " + tam);
+                System.out.println("El Tamano del arbol es de: " + tam);
                 break;
                 
             case 3:
                 System.out.println("Imprimiendo Altura...");
                 
                 int alt = arbol.Altura();
-                System.out.println("La altura del arbol es de " + alt);
+                System.out.println("La altura del arbol es de: " + alt);
                 break;
             case 4:
                 System.out.println("Imprimiento LRP...");
                 
                 double LRP = arbol.LRP();
-                System.out.println("El LRP del arbol es de " + LRP);
+                System.out.println("El LRP del arbol es de: " + LRP);
                 break;
             case 5:
                 System.out.println("Imprimiendo recorrido...");
